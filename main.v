@@ -112,9 +112,11 @@ endmodule
 
 module branch(reg_flag, reg_pc, branch_enable, branch_cond)
 
-input reg reg_flag;
+input reg_flag;
 input branch_enable;
 input branch_cond[2:0];
+
+reg cond_flag;
 
 output reg reg_pc;
 
