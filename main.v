@@ -29,16 +29,15 @@ output inst_type[4:0];
 output branch_enable;
 output branch_cond;
 
+assign c_type[1] = inst_in[0];
+
 always @(*)
 	begin
 		case(inst_in)
 			8'bxxx10000 : inst_type = 5'b10000; //branch
 			8'b1xxx1010 : //1B op
 			8'bxxx01000 : //1B op(interrupts)
-			default : begin
-				c_type[0] = 1;
-				c_type[1] = inst_in[0];
-			end 
+			default : c_type[0] = 1;
 		endcase
 	end
 endmodule
