@@ -123,6 +123,7 @@ output reg reg_pc;
 always@(branch_enable)
 	begin
 		case(branch_cond[2:1])
-			2'b00 : 
+			2'b00 : if(branch_cond[0] == reg_flag[7])
+			2'b00
 	end 
 endmodule
