@@ -127,6 +127,6 @@ always@(branch_enable)
 			2'b01 : if(branch_cond[0] == reg_flag[6]) //overflow
 			2'b10 : if(branch_cond[0] == reg_flag[0]) //carry
 			2'b11 : if(branch_cond[0] == reg_flag[1]) //zero
-			default : 
+			default : ;
 	end 
 endmodule
