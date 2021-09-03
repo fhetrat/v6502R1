@@ -125,6 +125,7 @@ always@(branch_enable)
 		case(branch_cond[2:1])
 			2'b00 : if(branch_cond[0] == reg_flag[7]) //negative
 			2'b01 : if(branch_cond[0] == reg_flag[6]) //overflow
-			2'b10 :
+			2'b10 : if(branch_cond[0] == reg_flag[0]) //carry
+			2'b11 : if(branch_cond[0] ==)
 	end 
 endmodule
