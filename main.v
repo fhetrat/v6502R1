@@ -129,3 +129,7 @@ always@(branch_enable)
 			default : ;
 	end 
 endmodule
+
+module inst_data_fetch(b_enable, branch_enable, inst_len)
+
+in
