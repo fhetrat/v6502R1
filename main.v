@@ -147,3 +147,11 @@ always@()begin
 	
 	end 
 endmodule
+
+//msic
+module queue_rotation()
+intput 
+
+re
+
+endmodule
