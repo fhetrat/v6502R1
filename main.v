@@ -5,7 +5,15 @@ reg reg_flag;
 
 endmodule
 
+//fetch 
+module inst_fetch()
 
+
+always@(*)begin
+
+	end
+
+endmodule
 //decode
 
 module prime_decoder(inst_in);
