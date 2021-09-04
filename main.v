@@ -132,4 +132,8 @@ endmodule
 
 module inst_data_fetch(b_enable, branch_enable, inst_len)
 
-in
+input b_enable;
+input branch_enable;
+input inst_len;
+
+always@(b_enable |)
