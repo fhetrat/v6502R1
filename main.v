@@ -153,6 +153,7 @@ module queue_rotation()
 intput 
 
 reg [7:0] queue[15:0];
-reg []
+reg ptr_s[3:0];
+reg ptr_e
 
 endmodule
