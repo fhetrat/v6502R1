@@ -10,9 +10,8 @@ module inst_fetch()
 
 
 always@(*)begin
-
+	
 	end
-
 endmodule
 //decode
 
