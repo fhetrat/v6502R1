@@ -152,6 +152,7 @@ endmodule
 module queue_rotation()
 intput 
 
-re
+reg [7:0] queue[15:0];
+reg []
 
 endmodule
