@@ -167,7 +167,7 @@ always@(queue_reset | queue_push | queue_pull)begin
 		ptr_e = 4'h0
 		end
 	else begin
-		
+		if(ptr_e + 4'h1 == ptr)
 		end
 	end
 endmodule
