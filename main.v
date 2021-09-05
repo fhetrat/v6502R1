@@ -164,14 +164,15 @@ reg [3:0] ptr_e;
 
 always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
-		full <= 0;
+		full <= 1'b0;
 		ptr_s <= 4'h0;
 		ptr_e <= 4'h0;
 		end
 	else begin
 		if(ptr_e + 4'h1 == ptr_s)
-			full <= 1;
+			full <= 1'b1;
 		else begin
+			full <= 1'b0;
 			ptr_e <= ptr_e + 4h'1;
 			end 
 		end
