@@ -157,9 +157,9 @@ input queue_push;
 output queue_out[7:0];
 output queue_pull;
 
-reg [7:0] queue[15:0];
-reg ptr_s[3:0];
-reg ptr_e[3:0];
+reg [7:0] queue [15:0];
+reg [3:0] ptr_s;
+reg [3:0]ptr_e;
 
 always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
