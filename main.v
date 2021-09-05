@@ -163,7 +163,10 @@ reg ptr_e[3:0];
 
 always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
+		ptr_s = 4'b0001
 		end
-	
+	else begin
+		
+		end
 	end
 endmodule
