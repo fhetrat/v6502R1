@@ -154,6 +154,6 @@ intput
 
 reg [7:0] queue[15:0];
 reg ptr_s[3:0];
-reg ptr_e
+reg ptr_e[3:0];
 
 endmodule
