@@ -172,7 +172,7 @@ always@(queue_reset | queue_push | queue_pull)begin
 		if(ptr_e + 4'h1 == ptr_s)
 			full = 1;
 		else begin
-			ptr
+			ptr_e + 4h'1;
 			end 
 		end
 	end
