@@ -51,11 +51,11 @@ endmodule
 
 module addr_mode(c_type, inst_bbb, addr_uOP, inst_len);
 
-input c_type[1:0];
-input inst_bbb[2:0];
+input [1:0] c_type;
+input [2:0] inst_bbb;
 
-output addr_uOP[6:0];	// X Y - ACC Imm ZP ABS indirect(flag)
-output inst_len[1:0];
+output [6:0] addr_uOP;	// X Y - ACC Imm ZP ABS indirect(flag)
+output [1:0] inst_len;
 
 wire b_enable;
 wire b_mode;
