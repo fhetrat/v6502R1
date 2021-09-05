@@ -150,7 +150,9 @@ endmodule
 
 //msic
 module queue_rotation()
-intput 
+input queue_in;
+input queue_push
+output queue_o
 
 reg [7:0] queue[15:0];
 reg ptr_s[3:0];
