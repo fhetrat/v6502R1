@@ -41,10 +41,10 @@ assign c_type[1] = inst_in[0];
 always @(*)
 	begin
 		case(inst_in)
-			8'bxxx10000 : inst_type = 5'b10000; //branch
+			8'bxxx10000 : inst_type <= 5'b10000; //branch
 			8'b1xxx1010 : //1B op
 			8'bxxx01000 : //1B op(interrupts)
-			default : c_type[0] = 1;
+			default : c_type[0] <= 1;
 		endcase
 	end
 endmodule
@@ -68,39 +68,39 @@ always @(b_enable)
 		case(inst_bbb)
 			3'b000 : begin
 				if(b_mode == 1)
-					inst_len = 2'h2;
-					addr_uOP = 7'b1000101; //(zp,x)
+					inst_len <= 2'h2;
+					addr_uOP <= 7'b1000101; //(zp,x)
 				else
-					inst_len = 2'h2;
-					addr_uOP = 7'b0001000; //imm
+					inst_len <= 2'h2;
+					addr_uOP <= 7'b0001000; //imm
 				end 
 			3'b001 : begin
-				inst_len = 2'h2;
-				addr_uOP = 7'b0000100; //zp
+				inst_len <= 2'h2;
+				addr_uOP <= 7'b0000100; //zp
 				end 
 			3'b010 : begin
 				if(b_mode == 1)
-					inst_len = 2'h2;
-					addr_uOP = 7'b0001000; //imm
+					inst_len <= 2'h2;
+					addr_uOP <= 7'b0001000; //imm
 				else
-					inst_len = 2'h2;
-					addr_uOP = 7'b0010000; //acc
+					inst_len <= 2'h2;
+					addr_uOP <= 7'b0010000; //acc
 				end 
 			3'b011 : begin
-				inst_len = 2'h3;
-				addr_uOP = 7'b0000010;	//abs
+				inst_len <= 2'h3;
+				addr_uOP <= 7'b0000010;	//abs
 				end
 			3'b100 : begin
-				inst_len = 2'h2;
-				addr_uOP = 7'b0100101;	//(zp),y
+				inst_len <= 2'h2;
+				addr_uOP <= 7'b0100101;	//(zp),y
 				end 
 			3'b101 : begin
-				inst_len = 2'h2;
-				addr_uOP = 7'b1000100;	//zp,x
+				inst_len <= 2'h2;
+				addr_uOP <= 7'b1000100;	//zp,x
 				end 
 			3'b110 : begin
-				inst_len = 2'h3;
-				addr_uOP = 7'b0100010;	//abs,y
+				inst_len <= 2'h3;
+				addr_uOP <= 7'b0100010;	//abs,y
 				end 
 			3'b111 : begin
 				inst_len = 2'h3;
