@@ -17,7 +17,7 @@ endmodule
 
 module prime_decoder(inst_in);
 
-input inst_in[7:0];
+input [7:0] inst_in;
 
 
 wire [1:0] inst_c_type;
