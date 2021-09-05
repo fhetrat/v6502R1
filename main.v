@@ -103,12 +103,12 @@ always @(b_enable)
 				addr_uOP <= 7'b0100010;	//abs,y
 				end 
 			3'b111 : begin
-				inst_len = 2'h3;
-				addr_uOP = 7'b1000010;	//abs,x
+				inst_len <= 2'h3;
+				addr_uOP <= 7'b1000010;	//abs,x
 				end 
 			default : begin
-				inst_len = 2'h1;
-				addr_uOP = 7'b0000000;
+				inst_len <= 2'h1;
+				addr_uOP <= 7'b0000000;
 				end
 		endcase
 	end
@@ -164,15 +164,15 @@ reg [3:0] ptr_e;
 
 always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
-		full = 0;
-		ptr_s = 4'h0;
-		ptr_e = 4'h0;
+		full <= 0;
+		ptr_s <= 4'h0;
+		ptr_e <= 4'h0;
 		end
 	else begin
 		if(ptr_e + 4'h1 == ptr_s)
-			full = 1;
+			full <= 1;
 		else begin
-			ptr_e + 4h'1;
+			ptr_e <= ptr_e + 4h'1;
 			end 
 		end
 	end
