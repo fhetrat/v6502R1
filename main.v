@@ -156,6 +156,7 @@ input [7:0] queue_in;
 input queue_push;
 output [7:0] queue_out;
 output queue_pull;
+output reg full;
 
 reg [7:0] queue [15:0];
 reg [3:0] ptr_s;
@@ -163,11 +164,13 @@ reg [3:0] ptr_e;
 
 always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
-		ptr_s = 4'h0
+		full = 0;
+		ptr_s = 4'h0;
 		ptr_e = 4'h0
 		end
 	else begin
-		if(ptr_e + 4'h1 == ptr)
+		if(ptr_e + 4'h1 == ptr_s)
+			
 		end
 	end
 endmodule
