@@ -149,7 +149,9 @@ always@()begin
 endmodule
 
 //msic
-module queue_rotation(queue_in, queue_push, queue_out, queue_pull)
+module queue_rotation(queue_in, queue_push, queue_out, queue_pull, queue_reset)
+
+input queue_reset;
 input queue_in;
 input queue_push;
 output queue_out;
@@ -158,5 +160,7 @@ output queue_pull;
 reg [7:0] queue[15:0];
 reg ptr_s[3:0];
 reg ptr_e[3:0];
+
+always@(queue_reset | qu)
 
 endmodule
