@@ -166,11 +166,14 @@ always@(queue_reset | queue_push | queue_pull)begin
 	if(queue_reset == 1)begin
 		full = 0;
 		ptr_s = 4'h0;
-		ptr_e = 4'h0
+		ptr_e = 4'h0;
 		end
 	else begin
 		if(ptr_e + 4'h1 == ptr_s)
-			
+			full = 1;
+		else begin
+			ptr
+			end 
 		end
 	end
 endmodule
