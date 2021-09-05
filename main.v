@@ -20,7 +20,7 @@ module prime_decoder(inst_in);
 input inst_in[7:0];
 
 
-wire inst_c_type[1:0];
+wire [1:0] inst_c_type;
 
 inst_type TD0(inst_in, inst_c_type);
 addr_mode AD0(inst_c_type, inst_in[4:2], , );
@@ -30,9 +30,9 @@ endmodule
 
 module inst_type(inst_in, inst_type);
 
-input inst_in[7:0];
+input [7:0] inst_in;
 
-output inst_type[4:0];
+output [4:0] inst_type;
 output branch_enable;
 output branch_cond;
 
