@@ -121,6 +121,7 @@ module branch(reg_flag, reg_pc, branch_enable, branch_cond)
 input reg_flag;
 input branch_enable;
 input [2:0] branch_cond;
+output jmp_enable;
 
 reg cond_flag;
 
@@ -129,11 +130,11 @@ output reg reg_pc;
 always@(branch_enable)
 	begin
 		case(branch_cond[2:1])
-			2'b00 : if(branch_cond[0] == reg_flag[7]) //negative
-			2'b01 : if(branch_cond[0] == reg_flag[6]) //overflow
-			2'b10 : if(branch_cond[0] == reg_flag[0]) //carry
-			2'b11 : if(branch_cond[0] == reg_flag[1]) //zero
-			default : ;
+			2'b00 : jmp_enable = (branch_cond[0] == reg_flag[7]) ? 1 : 0 //negative
+			2'b01 : jmp_enable = (branch_cond[0] == reg_flag[6]) ? 1 : 0 //overflow
+			2'b10 : jmp_enable = (branch_cond[0] == reg_flag[0]) ? 1 : 0 //carry
+			2'b11 : jmp_enable = (branch_cond[0] == reg_flag[1]) ? 1 : 0 //zero
+			default : jmp_enable <= 0;
 	end 
 endmodule
 
@@ -147,6 +148,17 @@ always@()begin
 	
 	end 
 endmodule
+
+module jmp()
+inout reg_pc;
+input addr;
+input abs_enable;
+
+always@(jmp_enable) begin
+  reg_pc = (abs_enable) ? reg_pc + addr : addr;
+  end 
+endmodule
+
 
 //msic
 module queue_rotation(queue_in, queue_push, queue_out, queue_pull, queue_reset)
